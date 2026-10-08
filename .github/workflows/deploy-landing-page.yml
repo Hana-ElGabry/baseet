@@ -30,12 +30,18 @@ jobs:
           cache: npm
           cache-dependency-path: SW/frontend/package-lock.json
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Install frontend dependencies
         working-directory: SW/frontend
         run: npm ci
 
       - name: Build frontend
         working-directory: SW/frontend
+        env:
+          REACT_APP_API_URL: https://YOUR-BACKEND-DOMAIN.example.com
+          REACT_APP_WS_URL: wss://YOUR-BACKEND-DOMAIN.example.com
         run: npm run build
 
       - name: Support React Router refreshes
