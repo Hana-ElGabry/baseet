@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { 
   Laptop, MonitorPlay, Smartphone, ArrowRight, 
   PlayCircle, BrainCircuit, Activity, Eye, Thermometer, 
-  HeartPulse, Layers, ShieldCheck, Users, Camera
+  HeartPulse, Layers, ShieldCheck, Camera
 } from 'lucide-react';
 import Logo from '../../components/ui/logo';
 
@@ -24,10 +24,6 @@ export default function LandingPage() {
       document.documentElement.style.backgroundColor = originalHtmlBg;
     };
   }, []);
-
-  const handleScroll = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -137,6 +133,9 @@ export default function LandingPage() {
           font-weight: 600;
           text-decoration: none;
           transition: background 0.2s;
+          border: none;
+          font-family: inherit;
+          cursor: not-allowed;
         }
         .l-btn-demo:hover {
           background-color: #DFE6E9;
@@ -386,11 +385,11 @@ export default function LandingPage() {
           <Logo />
         </div>
         <div className="l-nav-links">
-          <a onClick={() => handleScroll('about-us')}>About Us</a>
-          <a onClick={() => handleScroll('about')}>Our Mission</a>
-          <a onClick={() => handleScroll('how-it-works')}>How it Works</a>
-          <a onClick={() => handleScroll('ecosystem')}>Ecosystem</a>
-          <a onClick={() => handleScroll('technology')}>Technology</a>
+          <a href="#about-us">About Us</a>
+          <a href="#about">Our Mission</a>
+          <a href="#how-it-works">How it Works</a>
+          <a href="#ecosystem">Ecosystem</a>
+          <a href="#technology">Technology</a>
         </div>
         <div style={{ display: 'flex', gap: '16px' }}>
           <button className="l-btn l-btn-outline" onClick={() => navigate('/login')}>
@@ -510,7 +509,7 @@ export default function LandingPage() {
               The core hub. Students access interactive lessons, teachers manage curriculum and track progress, and supervisors oversee organization-wide health and analytics.
             </p>
             <div>
-              <a href="#" className="l-btn-demo"><PlayCircle size={16} style={{display: 'inline', verticalAlign: 'middle', marginRight: 4}}/> View Demo</a>
+              <button type="button" className="l-btn-demo" disabled><PlayCircle size={16} style={{display: 'inline', verticalAlign: 'middle', marginRight: 4}}/> View Demo</button>
             </div>
           </motion.div>
 
@@ -521,7 +520,7 @@ export default function LandingPage() {
               An immersive, distraction-free 3D environment. Students explore concepts through engaging, interactive gamification built specifically for neurodivergent focus.
             </p>
             <div>
-              <a href="#" className="l-btn-demo"><PlayCircle size={16} style={{display: 'inline', verticalAlign: 'middle', marginRight: 4}}/> View Demo</a>
+              <button type="button" className="l-btn-demo" disabled><PlayCircle size={16} style={{display: 'inline', verticalAlign: 'middle', marginRight: 4}}/> View Demo</button>
             </div>
           </motion.div>
 
@@ -532,7 +531,7 @@ export default function LandingPage() {
               Real-time peace of mind. Parents and caretakers receive instant alerts regarding the student's emotional state, milestone achievements, and learning session summaries.
             </p>
             <div>
-              <a href="#" className="l-btn-demo"><PlayCircle size={16} style={{display: 'inline', verticalAlign: 'middle', marginRight: 4}}/> View Demo</a>
+              <button type="button" className="l-btn-demo" disabled><PlayCircle size={16} style={{display: 'inline', verticalAlign: 'middle', marginRight: 4}}/> View Demo</button>
             </div>
           </motion.div>
         </motion.div>
