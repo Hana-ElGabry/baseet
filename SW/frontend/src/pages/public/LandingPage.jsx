@@ -595,8 +595,8 @@ export default function LandingPage() {
         <div className="l-footer-bottom">
           <span>&copy; {new Date().getFullYear()} Baseet. All rights reserved.</span>
           <div style={{display: 'flex', gap: '20px'}}>
-            <a href="#" style={{color: '#94a3b8', textDecoration: 'none'}}>Privacy Policy</a>
-            <a href="#" style={{color: '#94a3b8', textDecoration: 'none'}}>Terms of Service</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
           </div>
         </div>
       </footer>
